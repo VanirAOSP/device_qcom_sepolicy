@@ -1,17 +1,19 @@
 # Board specific SELinux policy variable definitions
-BOARD_SEPOLICY_DIRS += \
+ifeq ($(call is-vendor-board-platform,QCOM),true)
+BOARD_SEPOLICY_DIRS := \
        device/qcom/sepolicy \
        device/qcom/sepolicy/common \
        device/qcom/sepolicy/test \
        device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
 
-BOARD_SEPOLICY_UNION += \
+BOARD_SEPOLICY_UNION := \
        genfs_contexts \
        file_contexts \
        service_contexts \
        property_contexts \
        te_macros \
        device.te \
+       vold.te \
        ueventd.te \
        file.te \
        property.te \
@@ -38,6 +40,8 @@ BOARD_SEPOLICY_UNION += \
        diag_test.te \
        audiod.te \
        service.te \
+       system_app.te \
+       platform_app.te \
        thermal-engine.te \
        vm_bms.te \
        system_app.te \
@@ -63,6 +67,7 @@ BOARD_SEPOLICY_UNION += \
        surfaceflinger.te \
        mm-pp-daemon.te \
        wpa.te \
+       hostapd.te \
        bootanim.te \
        zygote.te \
        mdm_helper.te \
@@ -83,19 +88,21 @@ BOARD_SEPOLICY_UNION += \
        logd.te \
        installd.te \
        wcnss_service.te \
+       recovery.te \
        mmi.te \
        dhcp.te \
-       wfd_app.te \
        mediaserver_test.te \
        hbtp.te \
-       vold.te
-
--include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
+       kernel.te \
+       vold.te \
+       wfdservice.te \
+       usf.te \
+       net.te \
+       dnsmasq.te
 
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
 SSC_TARGET_LIST += msm8226
-SSC_TARGET_LIST += msm8610
 SSC_TARGET_LIST += msm8960
 SSC_TARGET_LIST += msm8974
 SSC_TARGET_LIST += msm8994
@@ -104,3 +111,7 @@ SSC_TARGET_LIST += msm8994
 BOARD_SEPOLICY_UNION += sensors.te
 BOARD_SEPOLICY_UNION += sensors_test.te
 #endif
+
+-include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
+
+endif
