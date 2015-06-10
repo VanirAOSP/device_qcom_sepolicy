@@ -12,6 +12,7 @@ BOARD_SEPOLICY_UNION += \
        property_contexts \
        te_macros \
        device.te \
+       vold.te \
        ueventd.te \
        file.te \
        property.te \
@@ -38,6 +39,8 @@ BOARD_SEPOLICY_UNION += \
        diag_test.te \
        audiod.te \
        service.te \
+       system_app.te \
+       platform_app.te \
        thermal-engine.te \
        vm_bms.te \
        system_app.te \
@@ -63,6 +66,7 @@ BOARD_SEPOLICY_UNION += \
        surfaceflinger.te \
        mm-pp-daemon.te \
        wpa.te \
+       hostapd.te \
        bootanim.te \
        zygote.te \
        mdm_helper.te \
@@ -83,11 +87,17 @@ BOARD_SEPOLICY_UNION += \
        logd.te \
        installd.te \
        wcnss_service.te \
+       recovery.te \
        mmi.te \
        dhcp.te \
        mediaserver_test.te \
        hbtp.te \
-       vold.te
+       kernel.te \
+       vold.te \
+       wfdservice.te \
+       usf.te \
+       net.te \
+       dnsmasq.te
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 
