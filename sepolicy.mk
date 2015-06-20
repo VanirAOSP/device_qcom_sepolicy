@@ -91,6 +91,7 @@ BOARD_SEPOLICY_UNION += \
        mmi.te \
        dhcp.te \
        mediaserver_test.te \
+       energyawareness.te \
        hbtp.te \
        kernel.te \
        vold.te \
