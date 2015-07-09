@@ -110,6 +110,9 @@ type mmi_data_file, file_type, data_file_type;
 type hbtp_cfg_file, file_type;
 type hbtp_log_file, file_type;
 
+# dts notifier files
+type dts_data_file, file_type, data_file_type;
+
 #bluetooth firmware file types
 type bt_firmware_file, fs_type, contextmount_type;
 
