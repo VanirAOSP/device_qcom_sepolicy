@@ -183,6 +183,7 @@
 /system/bin/usf_sw_calib                        u:object_r:usf_exec:s0
 /system/bin/usf_pairing                         u:object_r:usf_exec:s0
 /system/bin/usf_tester                          u:object_r:usf_exec:s0
+/system/bin/wcnss_filter                        u:object_r:wcnss_filter_exec:s0
 
 ###################################
 # sysfs files
