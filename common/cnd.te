@@ -58,6 +58,7 @@ cnd_nims_socket_perm(mtp)
 
 # allow cnd to perform socket operation on itself
 allow cnd self:socket create_socket_perms;
+allow cnd system_server:tcp_socket { write getattr shutdown getopt read bind setopt };
 
 # allow cnd to perform socket operation on itself
 allow cnd self:socket create_socket_perms;
