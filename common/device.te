@@ -116,3 +116,6 @@ type avtimer_device, dev_type;
 
 #define AT device
 type at_device, dev_type;
+
+#define persist block device
+type persist_block_device, dev_type;
