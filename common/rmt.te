@@ -1,0 +1,3 @@
+# remote storage process (runs as nobody)
+type rmt, domain, domain_deprecated;
+
